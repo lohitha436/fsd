@@ -1,27 +1,23 @@
 const fs = require("fs");
 
-// Step 1: Write file
-fs.writeFile("data.txt", "Hello Node.js", (err) => {
-  if (err) return console.log("Write error");
+try {
 
-  console.log("File written");
+    // Write to file
+    fs.writeFileSync("sample.txt", "Hello File");
+    console.log("File written successfully");
 
-  // Step 2: Read file
-  fs.readFile("data.txt", "utf8", (err, data) => {
-    if (err) return console.log("Read error");
+    // Append to file
+    fs.appendFileSync("sample.txt", "\nThis is Node JS");
+    console.log("File appended successfully");
 
-    console.log(data);
+    // Read from file
+    const data = fs.readFileSync("sample.txt", "utf8");
+    console.log("File content:\n" + data);
 
-    // Step 3: Append file
-    fs.appendFile("data.txt", "\nAppended text", (err) => {
-      if (err) return console.log("Append error");
+    // Delete file
+    // fs.unlinkSync("sample.txt");
+    // console.log("File deleted successfully");
 
-      console.log("Data appended");
-
-      // Step 4: Delete file
-      fs.unlink("data.txt", () => {
-        console.log("File deleted");
-      });
-    });
-  });
-});
+} catch (error) {
+    console.log("File operation error");
+}
