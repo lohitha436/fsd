@@ -1,0 +1,60 @@
+Open MongoDB Shell
+
+Press Windows + R
+
+Type:
+
+mongosh
+
+
+Press Enter
+
+Press Enter again to connect
+
+You should see:
+
+test>
+
+4️⃣ STEP-BY-STEP OPERATIONS (TYPE EXACTLY)
+
+First, switch to database:
+
+use collegeDB
+
+
+Make sure collection has data:
+
+db.students.find()
+
+🔹 1. COUNT Operation
+Count total documents:
+db.students.countDocuments()
+
+
+📌 Output:
+
+4
+
+🔹 2. LIMIT Operation
+Display only 2 documents:
+db.students.find().limit(2)
+
+
+📌 Output:
+
+Only first 2 documents shown
+
+🔹 3. SORT Operation
+Sort by roll number (ascending):
+db.students.find().sort({ roll: 1 })
+
+Sort by roll number (descending):
+db.students.find().sort({ roll: -1 })
+
+🔹 4. SKIP Operation
+Skip first 2 documents:
+db.students.find().skip(2)
+
+🔹 5. COMBINATION (VERY IMPORTANT FOR EXAM)
+Skip 1, then show 2:
+db.students.find().skip(1).limit(2)
