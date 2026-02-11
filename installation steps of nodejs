@@ -1,0 +1,67 @@
+Step 1: Download Node.js
+
+Open any web browser.
+
+Visit the official Node.js website: https://nodejs.org
+
+On the homepage, you will see two versions:
+
+LTS (Long Term Support) – Recommended version
+
+Current – Latest features version
+
+Click on the LTS version to download the Windows Installer (.msi file).
+
+Step 2: Install Node.js
+
+Locate the downloaded .msi file and double-click to open it.
+
+Click Next in the setup wizard.
+
+Accept the License Agreement and click Next.
+
+Choose the destination folder (default location is recommended) and click Next.
+
+Click Next again to confirm the default settings.
+
+Click Install to begin the installation process.
+
+Wait for the installation to complete.
+
+Click Finish to close the setup wizard.
+
+Step 3: Verify Installation
+
+Press Windows + R, type cmd, and press Enter to open Command Prompt.
+
+To check if Node.js is installed, type:
+
+node -v
+
+If installed successfully, it will display the Node.js version.
+
+To check npm (Node Package Manager), type:
+
+npm -v
+
+It will display the npm version.
+
+Step 4: Test Node.js
+
+In Command Prompt, type:
+
+node
+
+If the installation is successful, you will see a prompt symbol (>).
+
+Type the following command:
+
+console.log("Hello World")
+
+Press Enter. The output will display:
+
+Hello World
+
+To exit from Node.js, type:
+
+.exit
