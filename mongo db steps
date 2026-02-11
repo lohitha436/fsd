@@ -1,0 +1,78 @@
+Installation of MongoDB (Windows)
+Introduction
+
+MongoDB is a NoSQL database that stores data in JSON-like format (BSON). It is widely used for modern web applications due to its flexibility and scalability.
+
+Step 1: Download MongoDB
+
+Open a web browser.
+
+Visit the official MongoDB website: https://www.mongodb.com/try/download/community
+
+Select:
+
+Version: Latest Stable Version
+
+Platform: Windows
+
+Package: MSI
+
+Click Download to download the installer file.
+
+Step 2: Install MongoDB
+
+Open the downloaded .msi file.
+
+Click Next in the setup wizard.
+
+Accept the License Agreement and click Next.
+
+Choose Complete setup type (recommended).
+
+Ensure that Install MongoDB as a Service is selected.
+
+Click Next, then click Install.
+
+Wait for installation to complete.
+
+Click Finish.
+
+Step 3: Install MongoDB Shell (mongosh)
+
+Go to https://www.mongodb.com/try/download/shell
+
+Select Windows and download the MSI installer.
+
+Run the installer and follow the setup instructions.
+
+Click Finish after installation.
+
+Step 4: Verify MongoDB Installation
+
+Press Windows + R, type cmd, and press Enter.
+
+Type the following command:
+
+mongosh
+
+If installed successfully, it will connect to:
+
+mongodb://127.0.0.1:27017
+
+You will see the MongoDB shell prompt.
+
+Step 5: Test MongoDB
+
+Inside the MongoDB shell, type:
+
+show dbs
+
+This command displays the list of databases.
+
+To create a new database:
+
+use myDatabase
+
+To exit the shell:
+
+exit
