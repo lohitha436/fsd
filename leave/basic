@@ -1,0 +1,9 @@
+npx create-react-app leave-app
+cd leave-app
+
+
+
+npm start
+
+
+http://localhost:3000
