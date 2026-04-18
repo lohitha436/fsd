@@ -38,8 +38,8 @@ switched to db collegeDB
 Type:
 
 db.students.insertOne({
-  name: "Sreshta",
-  roll: 101,
+  name: "Lohitha",
+  roll: 4,
   branch: "CSE"
 })
 
@@ -57,7 +57,7 @@ Type:
 
 db.students.insertMany([
   { name: "Anu", roll: 102, branch: "IT" },
-  { name: "Ravi", roll: 103, branch: "ECE" }
+  { name: "Khushil", roll: 103, branch: "ECE" }
 ])
 
 🔹 STEP 4: Read (Display) Data
