@@ -24,6 +24,15 @@ use collegeDB
 
 Make sure collection has data:
 
+
+db.students.insertMany([
+  { name: "Lohitha", roll: 4, branch: "CSE" },
+  { name: "Anu", roll: 102, branch: "IT" },
+  { name: "Khushil", roll: 103, branch: "ECE" },
+  { name: "Varun", roll: 101, branch: "MEC" }
+])
+
+
 db.students.find()
 
 🔹 1. COUNT Operation
