@@ -1,0 +1,20 @@
+const { MongoClient } = require("mongodb");
+
+const client = new MongoClient("mongodb://127.0.0.1:27017");
+
+async function checkStudent() {
+  await client.connect();
+  const db = client.db("collegeDB");
+
+  const student = await db.collection("students").findOne({ name: "Anu" });
+
+  if (student) {
+    console.log("Student exists");
+  } else {
+    console.log("Not found");
+  }
+
+  await client.close();
+}
+
+checkStudent();
