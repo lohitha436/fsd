@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+<style>
+body{text-align:center}
+.box{width:250px;margin:auto}
+</style>
+</head>
+
+<body ng-controller="c">
+
+<div class="box">
+<input placeholder="Name" ng-model="s.name">
+<input type="number" placeholder="Age" ng-model="s.age">
+<input placeholder="Course" ng-model="s.course">
+<button ng-click="add()">Add</button>
+</div>
+
+<ul>
+<li ng-repeat="x in list">{{x.name}} - {{x.age}} - {{x.course}}</li>
+</ul>
+
+<script>
+angular.module("app",[])
+.controller("c",function($scope,$http){
+$scope.list=[];
+$http.get("http://localhost:3000/students").then(r=>{$scope.list=r.data});
+$scope.add=function(){
+$http.post("http://localhost:3000/students",$scope.s);
+$scope.list.push($scope.s);
+$scope.s={};
+};
+});
+</script>
+
+</body>
+</html>
