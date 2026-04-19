@@ -1,51 +1,37 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="app">
 <head>
-  <meta charset="UTF-8">
-  <title>AngularJS Form Example</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
   <style>
-    .valid { border: 2px solid green; }
-    .invalid { border: 2px solid red; }
-    .highlight { background-color: yellow; }
+    .valid { border:2px solid green; }
+    .invalid { border:2px solid red; }
   </style>
 </head>
-<body ng-controller="FormController">
 
-  <form name="myForm">
-    <label>Name:</label>
-    <input type="text" name="username" ng-model="user.name" 
-           ng-class="{'valid': myForm.username.$valid, 'invalid': myForm.username.$invalid}" 
-           ng-focus="highlight=true" ng-blur="highlight=false"
-           required>
-    <br><br>
+<body ng-controller="ctrl">
 
-    <label>Email:</label>
-    <input type="email" name="email" ng-model="user.email" 
-           ng-class="{'valid': myForm.email.$valid, 'invalid': myForm.email.$invalid}" 
-           required>
-    <br><br>
+<form name="f">
+  Name:
+  <input type="text" name="n" ng-model="u.name"
+         ng-class="f.n.$valid?'valid':'invalid'" required><br><br>
 
-    <button type="button" ng-click="submitForm()" ng-class="{'highlight': highlight}">
-      Submit
-    </button>
-  </form>
+  Email:
+  <input type="email" name="e" ng-model="u.email"
+         ng-class="f.e.$valid?'valid':'invalid'" required><br><br>
 
-  <p ng-if="message">{{message}}</p>
+  <button ng-click="submit()">Submit</button>
+</form>
 
-  <script>
-    angular.module('myApp', [])
-      .controller('FormController', ['$scope', function($scope) {
-        $scope.user = {};
-        $scope.highlight = false;
-        $scope.submitForm = function() {
-          if ($scope.myForm.$valid) {
-            $scope.message = "Form submitted successfully!";
-          } else {
-            $scope.message = "Please fill the form correctly.";
-          }
-        };
-      }]);
-  </script>
+<p>{{msg}}</p>
+
+<script>
+angular.module("app",[])
+.controller("ctrl", function($scope){
+  $scope.submit = function(){
+    $scope.msg = $scope.f.$valid ? "Success!" : "Fill correctly";
+  };
+});
+</script>
+
 </body>
 </html>
