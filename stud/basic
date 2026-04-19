@@ -1,0 +1,9 @@
+npm init -y
+npm install express cors
+
+
+node app.js
+
+
+
+Server running on http://localhost:3000
